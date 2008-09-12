@@ -100,7 +100,8 @@ EOF
   end
     
   def repo_path
-    "#{git_repository_directory || '/mnt/git'}/#{application}.git"    
+    prefix = git_repository_directory.empty? ? '/mnt/git' : git_repository_directory
+    "#{prefix}/#{application}.git"    
   end
   
   def create_git_repo
