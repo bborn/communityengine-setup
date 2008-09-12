@@ -193,7 +193,7 @@ EOF
   end
   
   def deploy_cold
-    generate_keys if confirm('Generate root ssh keys for deployment? If on an EC2 CommunityEngineServer instance, type Y)') #if on EC2, create root keys so the server can depoy to itself    
+    generate_keys if confirm('Generate root ssh keys for deployment? If on an EC2 CommunityEngineServer instance, type Y, else, N.)') #if on EC2, create root keys so the server can depoy to itself    
     
     say "Deploying"
     cmd = "cd #{repo_path} && cap deploy:setup && cap deploy:mysql_setup && cap deploy:cold && cap restart_web"

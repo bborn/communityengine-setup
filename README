@@ -25,7 +25,7 @@ Once started you will be able to find the address of the instance using ec2-desc
   ruby ce_setup.rb
 
 - When asked for the hostname, enter the EC2instance hostname (i.e. ec2-000-000-000-000.compute-1.amazonaws.com)
-- When asked if you want to deploy, type Y to have ce_setup deploy the application to your EC2 instance, or N to skip this step.
+- When asked if you want to deploy, type Y to have ce_setup deploy the application to your EC2 instance, or N to skip this step. 
   
 NOTES:
 
