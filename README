@@ -37,7 +37,7 @@ Take a look at config/deploy, make changes and try deploying!
   
 ## Using CommunityEngine-Setup locally to get CE installed
 
-NOTE: this will not work on an existing application!!
+NOTE: this will not work on an existing application!
 
 1. Grab the ce_setup.rb script and run it
 
