@@ -1,0 +1,34 @@
+The CommunityEngineServer image provides an Amazon EC2 instance (based on the Rightscale Ubuntu AMI), with all the prerequisites for a CommunityEngine application.
+
+LAUNCHING A CEServer INSTANCE:
+
+You should get familiar with the process for launching an EC2 instance in general:
+  http://docs.amazonwebservices.com/AWSEC2/2008-05-05/GettingStartedGuide/
+
+1. Launch the AMI
+The CEServer image has all of the necessary software installed, including Nginx, rmagick, and the other required gems for CE.
+
+  ec2-run-instances ami-XXXXX -k path/to/ec2-key
+
+
+2. SSH into your instance
+Once started you will be able to find the address of the instance using ec2-describe-instances and ssh in using your pubkey.
+
+  ssh -i ~/.ec2/id_rsa-gsg-keypair root@ec2-000-000-000-000.compute-1.amazonaws.com
+
+
+3. Grab the ce_setup.rb script
+
+  cd ~
+  git clone git://github.com/bborn/communityengine-setup.git
+  cd communityengine-setup
+  ruby ce_setup.rb
+  
+  
+NOTES:
+
+The ce_setup.rb script will create a git repository on your EC2 instance. To modify your application, you should clone that repository and do your work locally:  
+
+  git clone ssh://{ec2_server_hostname}/mnt/git/{application}.git
+  
+If you choose YES when the script asked if you wanted to deploy the app, it tried to deploy the app using the hostname you provided.
