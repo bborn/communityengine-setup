@@ -45,7 +45,6 @@ class CeSetup
     generate_migrations
     migrate
     setup_deployment
-    # generate_keys if confirm('Generate root ssh keys for deployment?') #if on EC2, create root keys so the server can depoy to itself
     deploy_cold if confirm('Deploy application?')
     # make_motd_file # if on EC2
   end
@@ -194,6 +193,8 @@ EOF
   end
   
   def deploy_cold
+    generate_keys if confirm('Generate root ssh keys for deployment? If on an EC2 CommunityEngineServer instance, type Y)') #if on EC2, create root keys so the server can depoy to itself    
+    
     say "Deploying"
     cmd = "cd #{repo_path} && cap deploy:setup && cap deploy:mysql_setup && cap deploy:cold && cap restart_web"
     system(cmd)
