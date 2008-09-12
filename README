@@ -10,7 +10,7 @@ You should get familiar with the process for launching an EC2 instance in genera
 1. Launch the AMI
 The CEServer image has all of the necessary software installed, including Nginx, rmagick, and the other required gems for CE.
 
-  ec2-run-instances ami-XXXXX -k path/to/ec2-key
+  ec2-run-instances ami-cbc226a2 -k path/to/ec2-key
 
 2. SSH into your instance
 Once started you will be able to find the address of the instance using ec2-describe-instances and ssh in using your pubkey.
