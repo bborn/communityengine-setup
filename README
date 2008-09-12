@@ -2,7 +2,7 @@ The CommunityEngineServer image provides an Amazon EC2 instance (based on the Ri
 
 The ce_setup.rb script can be used to setup an EC2 instance with a CE application, or it can be used on your local machine to get your CE application installed (tested on OS X only so far).
 
-## Using CommunityEngine-Setup with EC2, using a CommunityEngineServer instance:
+############ Using CommunityEngine-Setup with a CommunityEngineServer EC2 instance:
 
 You should get familiar with the process for launching an EC2 instance in general:
   http://docs.amazonwebservices.com/AWSEC2/2008-05-05/GettingStartedGuide/
@@ -35,7 +35,7 @@ The ce_setup.rb script creates a git repository on your EC2 instance. To modify 
   
 Take a look at config/deploy, make changes and try deploying!
   
-## Using CommunityEngine-Setup locally to get CE installed
+############ Using CommunityEngine-Setup locally to get CE installed
 
 NOTE: this will not work on an existing application!
 
@@ -47,5 +47,5 @@ NOTE: this will not work on an existing application!
   ruby ce_setup.rb
   
 - When prompted for the path where you want to store your repository, enter the absolute path to the directory where you want to keep your application (i.e. /Users/bruno/Projects)
-- When asked for the hostname, enter the hostname of your production server (if you have one), just enter example.com if you don't plan on deploying yet (the hostname is used in generating the deploy recipe, and you can always change it later.)
+- When asked for the hostname, enter the hostname of your production server (if you have one), or just enter example.com if you don't plan on deploying yet (the hostname is used in generating the deploy recipe, and you can always change it later.)
 - When asked if you want to deploy, type Y to have ce_setup deploy the application to your production server, or N to skip this step.
