@@ -190,6 +190,8 @@ EOF
     say "Setting up deployment"
     cmd = "cd #{repo_path} && capify . && rake community_engine:generate_deploy_script application=#{application} repo=#{repository_url} db_user=#{db_user} db_pass=#{db_pass} hostname=#{public_hostname}"
     system(cmd)
+    
+    commit_with_message('Adding deployment files')
   end
   
   def deploy_cold
